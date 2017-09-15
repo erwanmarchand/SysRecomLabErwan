@@ -1,0 +1,3 @@
+"0","name.star.trek <- 'Star Trek V: The Final Frontier (1989)'"
+"0","indice.star.trek <- u.item[u.item$movie.title==name.star.trek,]$movie.id"
+"0","notes.star.trek <- m.sparse[,indice.star.trek]"

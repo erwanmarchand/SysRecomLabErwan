@@ -1,0 +1,7 @@
+"0","wcor <- as.vector(cor(notes.star.trek, as.matrix(m.sparse)))"
+"0","similarMoviesCor.index <- max.nindex(wcor,11)"
+"0","similarMoviesCor.index <- similarMoviesCor.index[similarMoviesCor.index!=indice.star.trek ]"
+"0","similarMoviesCor.names <- u.item[similarMoviesCor.index,]$movie.title"
+"0","similarMoviesCor.names <- data.frame(similarMoviesCor.names)"
+"0","colnames(similarMoviesCor.names) <- c(paste(""Most similar movies from"",name.star.trek, sep = ' : '))"
+"0","similarMoviesCor.names"

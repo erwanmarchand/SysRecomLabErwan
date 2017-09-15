@@ -1,0 +1,5 @@
+"0","indices.movies.recommended.new.user <- min.nindex(distance.new.user, 10)"
+"0","title.movies.recommended.new.user <- as.matrix(u.item$movie.title[indices.movies.recommended.new.user])"
+"0","title.movies.recommended.new.user <- data.frame(title.movies.recommended.new.user)"
+"0","colnames(title.movies.recommended.new.user) <- c(""Recommended movies"")"
+"0","title.movies.recommended.new.user"

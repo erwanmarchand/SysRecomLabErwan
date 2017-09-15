@@ -1,0 +1,5 @@
+"0","notes.star.trek.predicted.no.na <- merge(as.matrix(notes.star.trek.predicted),as.matrix(notes.star.trek), by = ""row.names"")"
+"0","colnames(notes.star.trek.predicted.no.na) <- c(""Identifiant utilisateur"",""vote prédit"",""vote réel"")"
+"0","notes.star.trek.predicted.no.na <- na.omit(notes.star.trek.predicted.no.na)"
+"0","rownames(notes.star.trek.predicted.no.na) <- NULL"
+"0","notes.star.trek.predicted.no.na"

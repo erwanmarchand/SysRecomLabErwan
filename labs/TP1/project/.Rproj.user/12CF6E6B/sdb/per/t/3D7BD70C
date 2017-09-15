@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1504997270074.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "3D7BD70C",
+    "lastKnownWriteTime" : 27584942861975663,
+    "last_content_update" : 1504997270074,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "5C2C6355",
+        "caption" : "similarMoviesCos.names",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=similarMoviesCos.names&cache_key=5C2C6355",
+        "displayedObservations" : 10,
+        "environment" : "",
+        "object" : "similarMoviesCos.names",
+        "preview" : 0,
+        "totalObservations" : 10,
+        "variables" : 1
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

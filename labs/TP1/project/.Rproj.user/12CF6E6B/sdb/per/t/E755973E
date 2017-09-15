@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1505422222140.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E755973E",
+    "lastKnownWriteTime" : 8241996830334779394,
+    "last_content_update" : 1505422222140,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "25615B94",
+        "caption" : "notes.star.trek.predicted.no.na",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=notes.star.trek.predicted.no.na&cache_key=25615B94",
+        "displayedObservations" : "19",
+        "environment" : "",
+        "object" : "notes.star.trek.predicted.no.na",
+        "preview" : "0",
+        "totalObservations" : "19",
+        "variables" : "3"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

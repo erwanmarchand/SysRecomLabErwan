@@ -1,0 +1,4 @@
+"0","cosinus.vm <- function(v,m) { "
+"0","  n <- sqrt(colSums(m^2))"
+"0","  return ((v %*% m)/(n * sqrt(sum(v^2))))"
+"0","}"

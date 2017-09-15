@@ -1,0 +1,3 @@
+"0","meanPerJob <-aggregate(mx[, 7], list(mx$job), mean)"
+"0","colnames(meanPerJob) <- c(""job"",""mean Rating"")"
+"0","head(meanPerJob)"

@@ -1,0 +1,6 @@
+"0","erreur.quadratique <- sqrt(mean((notes.star.trek.predicted.no.na[,""vote prédit""] - notes.star.trek.predicted.no.na[,""vote réel""])^2, na.rm=TRUE))"
+"0","erreur.quadratique"
+"1","[1]"
+"1"," 0.8639139"
+"1","
+"

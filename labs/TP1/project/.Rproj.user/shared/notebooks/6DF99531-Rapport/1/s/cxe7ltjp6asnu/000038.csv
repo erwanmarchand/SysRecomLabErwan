@@ -1,0 +1,7 @@
+"0","wcos <- cosinus.vm(notes.star.trek , m.sparse)"
+"0","similarMoviesCos.index <- max.nindex(wcos,11)"
+"0","similarMoviesCos.index <- similarMoviesCos.index[similarMoviesCos.index!=indice.star.trek ]"
+"0","similarMoviesCos.names <- u.item[similarMoviesCos.index,]$movie.title"
+"0","similarMoviesCos.names <- data.frame(similarMoviesCos.names)"
+"0","colnames(similarMoviesCos.names) <- c(paste(""Most similar movies from"",name.star.trek, sep = ' : '))"
+"0","similarMoviesCos.names"

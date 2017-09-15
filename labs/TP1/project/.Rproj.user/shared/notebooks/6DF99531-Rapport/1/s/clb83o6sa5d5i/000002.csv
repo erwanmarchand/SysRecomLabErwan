@@ -1,0 +1,8 @@
+"0","max.nindex <- function(m, n=5) {"
+"0","  i <- order(m, decreasing=TRUE)"
+"0","  return(i[1:n])"
+"0","}"
+"0","min.nindex <- function(m, n=5) {"
+"0","  i <- order(m)"
+"0","  return(i[1:n])"
+"0","}"

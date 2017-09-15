@@ -1,0 +1,4 @@
+"0","votes.communs <- (colSums((m.sparse[,indice.star.trek] * m.sparse) > 0))"
+"0","distance.star.trek <- sqrt(colSums((m.sparse[,indice.star.trek] - m.sparse)^2))"
+"0","i.distance.star.trek <- min.nindex(distance.star.trek, n.voisins)"
+"0","i.distance.star.trek <- i.distance.star.trek[i.distance.star.trek!=indice.star.trek]"

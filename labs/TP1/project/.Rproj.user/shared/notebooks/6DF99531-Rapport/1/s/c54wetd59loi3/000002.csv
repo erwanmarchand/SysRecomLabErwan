@@ -1,0 +1,3 @@
+"0","votes.communs.new.user <- (rowSums((votes.new.user * m.sparse) > 0))"
+"0","distance.new.user <- sqrt(rowSums((votes.new.user - m.sparse)^2))"
+"0","i.distance.new.user <- min.nindex(distance.new.user, 20) #pas besoin de supprimer notre utilisateur de cette liste car il n'apparait pas dans m.sparse"

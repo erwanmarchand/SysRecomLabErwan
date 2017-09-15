@@ -1,0 +1,5 @@
+"0","indices.star.trek <- grep(""trek"", as.character(u.item$movie.title), ignore.case=TRUE)"
+"0","indices.star.wars <- c(172,181)"
+"0","votes.new.user <- user.votes <- rep(0, ncol(m.sparse))"
+"0","votes.new.user[indices.star.trek] <- 5"
+"0","votes.new.user[indices.star.wars] <- 1"

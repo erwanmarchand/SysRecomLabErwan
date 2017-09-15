@@ -1,0 +1,5 @@
+"0","temp <- as.matrix(votes.communs[i.distance.star.trek])"
+"0","temp <- data.frame(temp)"
+"0","colnames(temp) <- c(""nombre de votes communs"")"
+"0","rownames(temp) <- u.item[gsub('i','',rownames(temp)),]$movie.title"
+"0","temp"

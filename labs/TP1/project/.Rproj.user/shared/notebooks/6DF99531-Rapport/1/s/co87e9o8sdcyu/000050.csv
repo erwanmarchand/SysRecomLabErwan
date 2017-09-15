@@ -1,0 +1,3 @@
+"0","meanPerAge <-aggregate(mx[, 7], list(mx$age), mean)"
+"0","colnames(meanPerAge) <- c(""age"",""mean Rating"")"
+"0","head(meanPerAge)"
