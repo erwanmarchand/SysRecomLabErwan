@@ -131,31 +131,35 @@ $(document).ready(function () {
 <li><a href="#moyenne-par-profession">Moyenne par profession</a></li>
 <li><a href="#moyenne-par-age">Moyenne par age</a></li>
 </ul></li>
-<li><a href="#quels-sont-les-10-films-les-plus-similaires-a-star-trek-v-the-final-frontier-1989-selon-respectivement-la-mesure-du-cosinus-et-de-la-correlation-avec-la-matrice-de-votes.">2) Quels sont les 10 films les plus similaires à “Star Trek V: The Final Frontier (1989)” selon respectivement la mesure du cosinus et de la corrélation avec la matrice de votes.</a><ul>
+<li><a href="#quels-sont-les-10-films-les-plus-similaires-a-star-trek-v-the-final-frontier-1989-selon-respectivement-la-mesure-du-cosinus-et-de-la-correlation-avec-la-matrice-de-votes">2) Quels sont les 10 films les plus similaires à “Star Trek V: The Final Frontier (1989)” selon respectivement la mesure du cosinus et de la corrélation avec la matrice de votes</a><ul>
 <li><a href="#creation-des-fonctions">Creation des fonctions</a><ul>
 <li><a href="#cosinus-entre-un-vecteur-v-et-chaque-colonne-de-la-matrice-m">Cosinus entre un vecteur v et chaque colonne de la matrice m</a></li>
 <li><a href="#trouve-les-indexes-des-premieres-n-valeurs-maximalesminimales-dune-matrice">Trouve les indexes des premieres ‘n’ valeurs maximales/minimales d’une matrice</a></li>
 </ul></li>
-<li><a href="#les-10-films-les-plus-similaires-selon-la-mesure-du-cosinus-avec-la-matrice-de-votes.">Les 10 films les plus similaires selon la mesure du cosinus avec la matrice de votes.</a></li>
-<li><a href="#les-10-films-les-plus-similaires-selon-la-mesure-de-la-correlation-avec-la-matrice-de-votes.">Les 10 films les plus similaires selon la mesure de la correlation avec la matrice de votes.</a></li>
+<li><a href="#les-10-films-les-plus-similaires-selon-la-mesure-du-cosinus-avec-la-matrice-de-votes">Les 10 films les plus similaires selon la mesure du cosinus avec la matrice de votes</a></li>
+<li><a href="#les-10-films-les-plus-similaires-selon-la-mesure-de-la-correlation-avec-la-matrice-de-votes">Les 10 films les plus similaires selon la mesure de la correlation avec la matrice de votes</a></li>
 </ul></li>
-<li><a href="#utilisez-une-approche-item-item-pour-calculer-le-vote-au-film-star-trek-v-the-final-frontier-1989-des-utilisateurs-qui-nont-pas-de-vote-pour-celui-ci.-prenez-les-20-voisins-les-plus-rapproches-selon-la-distance-euclidienne-et-utilisez-les-cosinus-comme-poids.-si-aucun-vote-commun-existe-alors-la-valeur-predite-est-fixee-a-na.">3) Utilisez une approche item-item pour calculer le vote au film “Star Trek V: The Final Frontier (1989)” des utilisateurs qui n’ont pas de vote pour celui-ci. Prenez les 20 voisins les plus rapprochés selon la distance euclidienne et utilisez les cosinus comme poids. Si aucun vote commun existe, alors la valeur prédite est fixée à NA.</a><ul>
+<li><a href="#utilisez-une-approche-item-item-pour-calculer-le-vote-au-film-star-trek-v-the-final-frontier-1989-des-utilisateurs-qui-nont-pas-de-vote-pour-celui-ci.-prenez-les-20-voisins-les-plus-rapproches-selon-la-distance-euclidienne-et-utilisez-les-cosinus-comme-poids.-si-aucun-vote-commun-existe-alors-la-valeur-predite-est-fixee-a-na">3) Utilisez une approche item-item pour calculer le vote au film “Star Trek V: The Final Frontier (1989)” des utilisateurs qui n’ont pas de vote pour celui-ci. Prenez les 20 voisins les plus rapprochés selon la distance euclidienne et utilisez les cosinus comme poids. Si aucun vote commun existe, alors la valeur prédite est fixée à NA</a><ul>
 <li><a href="#recuperation-des-20-voisins-les-plus-rapproches-selon-la-distance-euclidienne-du-film-star-trek-v">Recuperation des 20 voisins les plus rapprochés selon la distance euclidienne du film “Star Trek V”</a></li>
 <li><a href="#verifications-des-donnees-recuperees">Verifications des données récupérées</a></li>
 <li><a href="#estimation-des-votes-des-utilisateurs-nayant-pas-votes-pour-star-trek-v">Estimation des votes des utilisateurs n’ayant pas votés pour “Star Trek V”</a></li>
 </ul></li>
-<li><a href="#calculez-lerreur-quadratique-moyenne-des-prediction-de-lapproche-item-item-a-la-question-precedente-en-la-comparant-aux-valeurs-observees.">4) Calculez l’erreur quadratique moyenne des prédiction de l’approche item-item à la question précédente en la comparant aux valeurs observées.</a><ul>
+<li><a href="#calculez-lerreur-quadratique-moyenne-des-prediction-de-lapproche-item-item-a-la-question-precedente-en-la-comparant-aux-valeurs-observees">4) Calculez l’erreur quadratique moyenne des prédiction de l’approche item-item à la question précédente en la comparant aux valeurs observées</a><ul>
 <li><a href="#calcul-des-votes-estimes-pour-les-utilisateurs-ayant-deja-votes.">Calcul des votes estimés pour les utilisateurs ayant déjà votés.</a></li>
 <li><a href="#comparaison-des-votes-estimes-aux-votes-reels.">Comparaison des votes estimés aux votes réels.</a></li>
 <li><a href="#calcul-de-lerreur-quadratique-moyenne.">Calcul de l’erreur quadratique moyenne.</a></li>
 </ul></li>
-<li><a href="#un-utilisateur-a-cote-la-note-la-plus-faible-1-a-tous-les-films-de-star-wars-et-la-note-la-plus-forte-5-a-tous-les-films-de-star-trek.-quels-10-films-lui-conseillez-vous-utilisez-une-approche-utilisateur-utilisateur-pour-la-reponse-et-20-voisins-rapproches.">5) Un utilisateur a coté la note la plus faible (1) à tous les films de Star Wars et la note la plus forte (5) à tous les films de Star Trek. Quels 10 films lui conseillez-vous? Utilisez une approche utilisateur-utilisateur pour la réponse et 20 voisins rapprochés.</a><ul>
-<li><a href="#initialisation-du-vecteur-de-votes-du-nouvel-utilisateur.">Initialisation du vecteur de votes du nouvel utilisateur.</a></li>
-<li><a href="#recuperation-des-20-voisins-les-plus-rapproches-selon-la-distance-euclidienne-du-nouvel-utilisateur.">Recuperation des 20 voisins les plus rapprochés selon la distance euclidienne du nouvel utilisateur.</a></li>
-<li><a href="#estimation-des-notes-du-nouvel-utilisateur-pour-les-films-quil-na-pas-vu.">Estimation des notes du nouvel utilisateur pour les films qu’il n’a pas vu.</a></li>
-<li><a href="#affichage-des-10-films-auquels-lutilisateur-est-susceptible-de-donner-les-meilleurs-notes.">Affichage des 10 films auquels l’utilisateur est susceptible de donner les meilleurs notes.</a></li>
+<li><a href="#un-utilisateur-a-cote-la-note-la-plus-faible-1-a-tous-les-films-de-star-wars-et-la-note-la-plus-forte-5-a-tous-les-films-de-star-trek.-quels-10-films-lui-conseillez-vous-utilisez-une-approche-utilisateur-utilisateur-pour-la-reponse-et-20-voisins-rapproches">5) Un utilisateur a coté la note la plus faible (1) à tous les films de Star Wars et la note la plus forte (5) à tous les films de Star Trek. Quels 10 films lui conseillez-vous? Utilisez une approche utilisateur-utilisateur pour la réponse et 20 voisins rapprochés</a><ul>
+<li><a href="#initialisation-du-vecteur-de-votes-du-nouvel-utilisateur">Initialisation du vecteur de votes du nouvel utilisateur</a></li>
+<li><a href="#recuperation-des-20-voisins-les-plus-rapproches-selon-la-distance-euclidienne-du-nouvel-utilisateur">Recuperation des 20 voisins les plus rapprochés selon la distance euclidienne du nouvel utilisateur</a></li>
+<li><a href="#estimation-des-notes-du-nouvel-utilisateur-pour-les-films-quil-na-pas-vu">Estimation des notes du nouvel utilisateur pour les films qu’il n’a pas vu</a></li>
+<li><a href="#affichage-des-10-films-auquels-lutilisateur-est-susceptible-de-donner-les-meilleurs-notes">Affichage des 10 films auquels l’utilisateur est susceptible de donner les meilleurs notes</a></li>
 </ul></li>
-<li><a href="#je-suis-un-nouvel-utilisateur.-vous-connaissez-ma-profession-mon-sexe-et-mon-age.-developpez-un-algorithme-bayesien-pour-recommander-10-films-sur-la-base-de-ces-trois-categories.">6) Je suis un nouvel utilisateur. Vous connaissez ma profession, mon sexe et mon âge. Développez un algorithme bayésien pour recommander 10 films sur la base de ces trois catégories.</a></li>
+<li><a href="#je-suis-un-nouvel-utilisateur.-vous-connaissez-ma-profession-mon-sexe-et-mon-age.-developpez-un-algorithme-bayesien-pour-recommander-10-films-sur-la-base-de-ces-trois-categories">6) Je suis un nouvel utilisateur. Vous connaissez ma profession, mon sexe et mon âge. Développez un algorithme bayésien pour recommander 10 films sur la base de ces trois catégories</a><ul>
+<li><a href="#fonctions-utilitaires">Fonctions utilitaires</a></li>
+<li><a href="#fonction-principale">Fonction principale</a></li>
+<li><a href="#essais-avec-differents-utilisateurs">Essais avec différents utilisateurs</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -280,8 +284,8 @@ head(meanPerAge)</code></pre>
 </div>
 </div>
 </div>
-<div id="quels-sont-les-10-films-les-plus-similaires-a-star-trek-v-the-final-frontier-1989-selon-respectivement-la-mesure-du-cosinus-et-de-la-correlation-avec-la-matrice-de-votes." class="section level1">
-<h1>2) Quels sont les 10 films les plus similaires à “Star Trek V: The Final Frontier (1989)” selon respectivement la mesure du cosinus et de la corrélation avec la matrice de votes.</h1>
+<div id="quels-sont-les-10-films-les-plus-similaires-a-star-trek-v-the-final-frontier-1989-selon-respectivement-la-mesure-du-cosinus-et-de-la-correlation-avec-la-matrice-de-votes" class="section level1">
+<h1>2) Quels sont les 10 films les plus similaires à “Star Trek V: The Final Frontier (1989)” selon respectivement la mesure du cosinus et de la corrélation avec la matrice de votes</h1>
 <p>Afin de répondre a cette question, il est necessaire de creer plusieurs fonctions.</p>
 <div id="creation-des-fonctions" class="section level2">
 <h2>Creation des fonctions</h2>
@@ -305,8 +309,8 @@ min.nindex &lt;- function(m, n=5) {
 }</code></pre>
 </div>
 </div>
-<div id="les-10-films-les-plus-similaires-selon-la-mesure-du-cosinus-avec-la-matrice-de-votes." class="section level2">
-<h2>Les 10 films les plus similaires selon la mesure du cosinus avec la matrice de votes.</h2>
+<div id="les-10-films-les-plus-similaires-selon-la-mesure-du-cosinus-avec-la-matrice-de-votes" class="section level2">
+<h2>Les 10 films les plus similaires selon la mesure du cosinus avec la matrice de votes</h2>
 <p>Sachant que le film le plus similaire a Star Trek V selon la matrice de vote sera toujours lui meme, il faut penser a le supprimer du resultat.</p>
 <p>Dans un premier temps, on recupere l’indice du film considere ainsi que les notes qui y sont associes</p>
 <pre class="r"><code>name.star.trek &lt;- &quot;Star Trek V: The Final Frontier (1989)&quot;
@@ -363,8 +367,8 @@ similarMoviesCos.names</code></pre>
 </table>
 </div>
 </div>
-<div id="les-10-films-les-plus-similaires-selon-la-mesure-de-la-correlation-avec-la-matrice-de-votes." class="section level2">
-<h2>Les 10 films les plus similaires selon la mesure de la correlation avec la matrice de votes.</h2>
+<div id="les-10-films-les-plus-similaires-selon-la-mesure-de-la-correlation-avec-la-matrice-de-votes" class="section level2">
+<h2>Les 10 films les plus similaires selon la mesure de la correlation avec la matrice de votes</h2>
 <pre class="r"><code>wcor &lt;- as.vector(cor(notes.star.trek, as.matrix(m.sparse)))
 similarMoviesCor.index &lt;- max.nindex(wcor, 11)
 similarMoviesCor.index &lt;- similarMoviesCor.index[similarMoviesCor.index != indice.star.trek]
@@ -417,8 +421,8 @@ similarMoviesCor.names</code></pre>
 <p>On peut constater qu’on obtient dans les 2 cas la meme liste de films.</p>
 </div>
 </div>
-<div id="utilisez-une-approche-item-item-pour-calculer-le-vote-au-film-star-trek-v-the-final-frontier-1989-des-utilisateurs-qui-nont-pas-de-vote-pour-celui-ci.-prenez-les-20-voisins-les-plus-rapproches-selon-la-distance-euclidienne-et-utilisez-les-cosinus-comme-poids.-si-aucun-vote-commun-existe-alors-la-valeur-predite-est-fixee-a-na." class="section level1">
-<h1>3) Utilisez une approche item-item pour calculer le vote au film “Star Trek V: The Final Frontier (1989)” des utilisateurs qui n’ont pas de vote pour celui-ci. Prenez les 20 voisins les plus rapprochés selon la distance euclidienne et utilisez les cosinus comme poids. Si aucun vote commun existe, alors la valeur prédite est fixée à NA.</h1>
+<div id="utilisez-une-approche-item-item-pour-calculer-le-vote-au-film-star-trek-v-the-final-frontier-1989-des-utilisateurs-qui-nont-pas-de-vote-pour-celui-ci.-prenez-les-20-voisins-les-plus-rapproches-selon-la-distance-euclidienne-et-utilisez-les-cosinus-comme-poids.-si-aucun-vote-commun-existe-alors-la-valeur-predite-est-fixee-a-na" class="section level1">
+<h1>3) Utilisez une approche item-item pour calculer le vote au film “Star Trek V: The Final Frontier (1989)” des utilisateurs qui n’ont pas de vote pour celui-ci. Prenez les 20 voisins les plus rapprochés selon la distance euclidienne et utilisez les cosinus comme poids. Si aucun vote commun existe, alors la valeur prédite est fixée à NA</h1>
 <div id="recuperation-des-20-voisins-les-plus-rapproches-selon-la-distance-euclidienne-du-film-star-trek-v" class="section level2">
 <h2>Recuperation des 20 voisins les plus rapprochés selon la distance euclidienne du film “Star Trek V”</h2>
 <p>Il est tout d’abord important de noter que nous devons considerer les 21 voisins les plus proches, sachant que le voisin le plus proche de Star Trek V sera toujours lui-meme tel que mentionne precedemment.</p>
@@ -666,8 +670,8 @@ notes.star.trek.predicted.na.no.na</code></pre>
 <p>On peut constater que les résultats semblent cohérents car ils sont tous compris entre 0 et 5, de plus la moyenne de ces estimations est d’environ 2.39 ce qui est raisonnable.</p>
 </div>
 </div>
-<div id="calculez-lerreur-quadratique-moyenne-des-prediction-de-lapproche-item-item-a-la-question-precedente-en-la-comparant-aux-valeurs-observees." class="section level1">
-<h1>4) Calculez l’erreur quadratique moyenne des prédiction de l’approche item-item à la question précédente en la comparant aux valeurs observées.</h1>
+<div id="calculez-lerreur-quadratique-moyenne-des-prediction-de-lapproche-item-item-a-la-question-precedente-en-la-comparant-aux-valeurs-observees" class="section level1">
+<h1>4) Calculez l’erreur quadratique moyenne des prédiction de l’approche item-item à la question précédente en la comparant aux valeurs observées</h1>
 <p>Dans un premier temps, on doit recalculer les vote estimés, cette fois-ci pour les utilisateurs ayant deja votés.</p>
 <div id="calcul-des-votes-estimes-pour-les-utilisateurs-ayant-deja-votes." class="section level2">
 <h2>Calcul des votes estimés pour les utilisateurs ayant déjà votés.</h2>
@@ -821,11 +825,11 @@ erreur.quadratique</code></pre>
 <p>On peut constater que l’erreur quadratique de nos estimations est d’environ 0.86, ce qui est explicable par le faible nombre de votes communs parfois utilisé afin de générer ces estimations.</p>
 </div>
 </div>
-<div id="un-utilisateur-a-cote-la-note-la-plus-faible-1-a-tous-les-films-de-star-wars-et-la-note-la-plus-forte-5-a-tous-les-films-de-star-trek.-quels-10-films-lui-conseillez-vous-utilisez-une-approche-utilisateur-utilisateur-pour-la-reponse-et-20-voisins-rapproches." class="section level1">
-<h1>5) Un utilisateur a coté la note la plus faible (1) à tous les films de Star Wars et la note la plus forte (5) à tous les films de Star Trek. Quels 10 films lui conseillez-vous? Utilisez une approche utilisateur-utilisateur pour la réponse et 20 voisins rapprochés.</h1>
+<div id="un-utilisateur-a-cote-la-note-la-plus-faible-1-a-tous-les-films-de-star-wars-et-la-note-la-plus-forte-5-a-tous-les-films-de-star-trek.-quels-10-films-lui-conseillez-vous-utilisez-une-approche-utilisateur-utilisateur-pour-la-reponse-et-20-voisins-rapproches" class="section level1">
+<h1>5) Un utilisateur a coté la note la plus faible (1) à tous les films de Star Wars et la note la plus forte (5) à tous les films de Star Trek. Quels 10 films lui conseillez-vous? Utilisez une approche utilisateur-utilisateur pour la réponse et 20 voisins rapprochés</h1>
 <p>Pour répondre à cette question, on peut obter pour une approche similaire à celle de la question 3.</p>
-<div id="initialisation-du-vecteur-de-votes-du-nouvel-utilisateur." class="section level2">
-<h2>Initialisation du vecteur de votes du nouvel utilisateur.</h2>
+<div id="initialisation-du-vecteur-de-votes-du-nouvel-utilisateur" class="section level2">
+<h2>Initialisation du vecteur de votes du nouvel utilisateur</h2>
 <pre class="r"><code>indices.star.trek &lt;- grep(&quot;trek&quot;, as.character(u.item$movie.title), ignore.case = TRUE)
 indices.star.wars &lt;- c(172, 181)
 
@@ -833,14 +837,14 @@ votes.new.user &lt;- user.votes &lt;- rep(0, ncol(m.sparse))
 votes.new.user[indices.star.trek] &lt;- 5
 votes.new.user[indices.star.wars] &lt;- 1</code></pre>
 </div>
-<div id="recuperation-des-20-voisins-les-plus-rapproches-selon-la-distance-euclidienne-du-nouvel-utilisateur." class="section level2">
-<h2>Recuperation des 20 voisins les plus rapprochés selon la distance euclidienne du nouvel utilisateur.</h2>
+<div id="recuperation-des-20-voisins-les-plus-rapproches-selon-la-distance-euclidienne-du-nouvel-utilisateur" class="section level2">
+<h2>Recuperation des 20 voisins les plus rapprochés selon la distance euclidienne du nouvel utilisateur</h2>
 <pre class="r"><code>votes.communs.new.user &lt;- (rowSums((votes.new.user * m.sparse) &gt; 0))
 distance.new.user &lt;- sqrt(rowSums((votes.new.user - m.sparse)^2))
 i.distance.new.user &lt;- min.nindex(distance.new.user, 20)  #pas besoin de supprimer notre utilisateur de cette liste car il n'apparait pas dans m.sparse</code></pre>
 </div>
-<div id="estimation-des-notes-du-nouvel-utilisateur-pour-les-films-quil-na-pas-vu." class="section level2">
-<h2>Estimation des notes du nouvel utilisateur pour les films qu’il n’a pas vu.</h2>
+<div id="estimation-des-notes-du-nouvel-utilisateur-pour-les-films-quil-na-pas-vu" class="section level2">
+<h2>Estimation des notes du nouvel utilisateur pour les films qu’il n’a pas vu</h2>
 <pre class="r"><code>wcos.new.user.voisins &lt;- as.vector(cosinus.vm(votes.new.user, t(m.sparse[i.distance.new.user, 
     ])))
 
@@ -867,8 +871,8 @@ notes.new.user.predicted &lt;- t(temp) %*% wcos.new.user.voisins/wcos.sums.new.u
 notes.new.user.predicted[notes.new.user.predicted == 0] &lt;- NA
 notes.new.user.predicted &lt;- mean.new.user + notes.new.user.predicted</code></pre>
 </div>
-<div id="affichage-des-10-films-auquels-lutilisateur-est-susceptible-de-donner-les-meilleurs-notes." class="section level2">
-<h2>Affichage des 10 films auquels l’utilisateur est susceptible de donner les meilleurs notes.</h2>
+<div id="affichage-des-10-films-auquels-lutilisateur-est-susceptible-de-donner-les-meilleurs-notes" class="section level2">
+<h2>Affichage des 10 films auquels l’utilisateur est susceptible de donner les meilleurs notes</h2>
 <pre class="r"><code>indices.movies.recommended.new.user &lt;- min.nindex(distance.new.user, 10)
 title.movies.recommended.new.user &lt;- as.matrix(u.item$movie.title[indices.movies.recommended.new.user])
 title.movies.recommended.new.user &lt;- data.frame(title.movies.recommended.new.user)
@@ -917,9 +921,220 @@ title.movies.recommended.new.user</code></pre>
 </div>
 </div>
 </div>
-<div id="je-suis-un-nouvel-utilisateur.-vous-connaissez-ma-profession-mon-sexe-et-mon-age.-developpez-un-algorithme-bayesien-pour-recommander-10-films-sur-la-base-de-ces-trois-categories." class="section level1">
-<h1>6) Je suis un nouvel utilisateur. Vous connaissez ma profession, mon sexe et mon âge. Développez un algorithme bayésien pour recommander 10 films sur la base de ces trois catégories.</h1>
+<div id="je-suis-un-nouvel-utilisateur.-vous-connaissez-ma-profession-mon-sexe-et-mon-age.-developpez-un-algorithme-bayesien-pour-recommander-10-films-sur-la-base-de-ces-trois-categories" class="section level1">
+<h1>6) Je suis un nouvel utilisateur. Vous connaissez ma profession, mon sexe et mon âge. Développez un algorithme bayésien pour recommander 10 films sur la base de ces trois catégories</h1>
 <p>Afin de répondre à cette question, il est nécessaire de “discretiser” la variable pour l’age de l’utilisateur, sans quoi les nombre de comparaisons avec d’autres utilisateurs du meme age sera trop faible. A cette fin, l’approche vue en cours sera utilisée : les ages seront séparés en 2 groupes : les moins de 50 ans et les 50 ans et plus. Cette approche peut sembler diminuer fortement la precision de l’algorithme, cependant les 2 autres precision (sexe et profession) permettront d’obtenir des resultats suffisament precis pour globaliser fortement l’age du nouvel utilisateur.</p>
+<div id="fonctions-utilitaires" class="section level2">
+<h2>Fonctions utilitaires</h2>
+<p>On peut commencer par créer 2 fonctions utilitaires.</p>
+<pre class="r"><code>ratio.chances &lt;- function(rating.vec, seuil = 3) {
+    sum(rating.vec &gt; seuil)/sum(rating.vec &lt;= seuil)
+}
+
+OddsToP &lt;- function(o) {
+    o/(1 + o)
+}</code></pre>
+<p>On peut ensuite écrire la fonction principale qui, selon les caracteristique de l’utilisateur, lui retournera 10 filns conseillés.</p>
+</div>
+<div id="fonction-principale" class="section level2">
+<h2>Fonction principale</h2>
+<pre class="r"><code>recommended.movie.content.base &lt;- function(job, gender, age) {
+    
+    probabilities.to.like = rep(0, nrow(u.item))
+    
+    for (movie in c(1:nrow(u.item))) {
+        
+        i &lt;- (mx$item == movie &amp; mx$rating &gt; 3)  # ceux qui aiment
+        ni &lt;- (mx$item == movie &amp; mx$rating &lt;= 3)  # et ceux qui n'aiment pas
+        
+        # on ne considere le film que s'il y a au minimum 3 votes, sinon on laisse
+        # la probabilité à 0
+        if (sum(i) + sum(ni) &gt;= 3) {
+            
+            E_11 &lt;- (table(mx[i, &quot;job&quot;])/sum(table(mx[i, &quot;job&quot;])))[job]
+            E_12 &lt;- (table(mx[ni, &quot;job&quot;])/sum(table(mx[ni, &quot;job&quot;])))[job]
+            
+            if (is.na(E_12) | E_12 == 0) {
+                E_1 &lt;- 0
+            } else {
+                E_1 &lt;- E_11/E_12
+            }
+            
+            if (age &lt; 50) {
+                E_21 &lt;- table(mx[i, &quot;age&quot;] &lt; 50)/sum(table(mx[i, &quot;age&quot;] &lt; 50))
+                E_22 &lt;- table(mx[ni, &quot;age&quot;] &lt; 50)/sum(table(mx[ni, &quot;age&quot;] &lt; 
+                  50))
+            } else {
+                E_21 &lt;- table(mx[i, &quot;age&quot;] &gt;= 50)/sum(table(mx[i, &quot;age&quot;] &gt;= 
+                  50))
+                E_22 &lt;- table(mx[ni, &quot;age&quot;] &gt;= 50)/sum(table(mx[ni, &quot;age&quot;] &gt;= 
+                  50))
+            }
+            
+            # si on a pas suffisament de votes on arrete
+            if (nrow(E_21) &lt; 2 | nrow(E_22) &lt; 2) {
+                E_2 &lt;- 0
+            } else {
+                E_2 &lt;- (E_21/E_22)[&quot;TRUE&quot;]
+            }
+            
+            E_31 &lt;- (table(mx[i, &quot;gender&quot;])/sum(table(mx[i, &quot;gender&quot;])))[gender]
+            E_32 &lt;- (table(mx[ni, &quot;gender&quot;])/sum(table(mx[ni, &quot;gender&quot;])))[gender]
+            
+            if (is.na(E_32) | E_32 == 0) {
+                E_3 &lt;- 0
+            } else {
+                E_3 &lt;- E_31/E_32
+            }
+            
+            probabilities.to.like[movie] &lt;- OddsToP(ratio.chances(mx[mx$item.id == 
+                movie, &quot;rating&quot;]) * E_1 * E_2 * E_3)
+            
+        } else {
+            probabilities.to.like[movie] &lt;- 0
+        }
+        
+    }
+    
+    probabilities.to.like[is.nan(probabilities.to.like)] &lt;- 0
+    
+    indices.movies.recommended.new.user &lt;- max.nindex(probabilities.to.like, 
+        10)
+    recommended.movies &lt;- data.frame(u.item$movie.title[indices.movies.recommended.new.user])
+    colnames(recommended.movies) &lt;- c(&quot;Recommended movies&quot;)
+    recommended.movies
+}</code></pre>
+</div>
+<div id="essais-avec-differents-utilisateurs" class="section level2">
+<h2>Essais avec différents utilisateurs</h2>
+<p>On peut finalement tester cette fonction avec differents cas.</p>
+<pre class="r"><code>recommended.movie.content.base('engineer', 'M', '40')</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Recommended movies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">L.A. Confidential (1997)</td>
+</tr>
+<tr class="even">
+<td align="left">Star Wars (1977)</td>
+</tr>
+<tr class="odd">
+<td align="left">Maltese Falcon, The (1941)</td>
+</tr>
+<tr class="even">
+<td align="left">Princess Bride, The (1987)</td>
+</tr>
+<tr class="odd">
+<td align="left">Vertigo (1958)</td>
+</tr>
+<tr class="even">
+<td align="left">Casablanca (1942)</td>
+</tr>
+<tr class="odd">
+<td align="left">Raiders of the Lost Ark (1981)</td>
+</tr>
+<tr class="even">
+<td align="left">Man Who Would Be King, The (1975)</td>
+</tr>
+<tr class="odd">
+<td align="left">Rear Window (1954)</td>
+</tr>
+<tr class="even">
+<td align="left">Empire Strikes Back, The (1980)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code>recommended.movie.content.base('student', 'F', '20')</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Recommended movies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Casablanca (1942)</td>
+</tr>
+<tr class="even">
+<td align="left">Vertigo (1958)</td>
+</tr>
+<tr class="odd">
+<td align="left">Jane Eyre (1996)</td>
+</tr>
+<tr class="even">
+<td align="left">Nikita (La Femme Nikita) (1990)</td>
+</tr>
+<tr class="odd">
+<td align="left">Secrets &amp; Lies (1996)</td>
+</tr>
+<tr class="even">
+<td align="left">Manchurian Candidate, The (1962)</td>
+</tr>
+<tr class="odd">
+<td align="left">Shawshank Redemption, The (1994)</td>
+</tr>
+<tr class="even">
+<td align="left">Much Ado About Nothing (1993)</td>
+</tr>
+<tr class="odd">
+<td align="left">Some Folks Call It a Sling Blade (1993)</td>
+</tr>
+<tr class="even">
+<td align="left">Hamlet (1996)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="r"><code>recommended.movie.content.base('writer', 'M', '60')</code></pre>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Recommended movies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Amadeus (1984)</td>
+</tr>
+<tr class="even">
+<td align="left">Maltese Falcon, The (1941)</td>
+</tr>
+<tr class="odd">
+<td align="left">Looking for Richard (1996)</td>
+</tr>
+<tr class="even">
+<td align="left">High Noon (1952)</td>
+</tr>
+<tr class="odd">
+<td align="left">Peacemaker, The (1997)</td>
+</tr>
+<tr class="even">
+<td align="left">Godfather, The (1972)</td>
+</tr>
+<tr class="odd">
+<td align="left">Crumb (1994)</td>
+</tr>
+<tr class="even">
+<td align="left">Priest (1994)</td>
+</tr>
+<tr class="odd">
+<td align="left">Glory (1989)</td>
+</tr>
+<tr class="even">
+<td align="left">Apocalypse Now (1979)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 
 

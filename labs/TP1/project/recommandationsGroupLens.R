@@ -186,3 +186,87 @@ notes.new.user.predicted <- mean.new.user + notes.new.user.predicted
 
 indices.movies.recommended.new.user <- min.nindex(distance.new.user, 10)
 u.item$movie.title[indices.movies.recommended.new.user]
+
+
+# 6
+
+new.user.job <- 'engineer'
+new.user.gender <- 'M'
+new.user.age <- '40'
+
+
+ratio.chances <- function(rating.vec, seuil=3) {
+  sum(rating.vec > seuil) / sum(rating.vec <= seuil)
+}
+
+OddsToP <- function(o) {
+  o/(1+o)
+}
+
+recommended.movie.content.base <- function(job, gender, age){
+
+  probabilities.to.like = rep(0, nrow(u.item))
+  
+  for (movie in c(1:nrow(u.item))) {
+    
+    i <- (mx$item==movie & mx$rating>3)           # ceux qui aiment
+    ni <- (mx$item==movie & mx$rating<=3)         # et ceux qui n'aiment pas
+    
+    #on ne considere le film que s'il y a au minimum 3 votes, sinon on laisse la probabilité à 0
+    if (sum(i) + sum(ni) >= 3){
+      
+      E_11 <- (table(mx[i, 'job'])/sum(table(mx[i, 'job'])))[job]
+      E_12 <- (table(mx[ni, 'job'])/sum(table(mx[ni, 'job'])))[job]
+    
+      if (is.na(E_12) | E_12 == 0) {
+        E_1 <- 0
+      }
+      else {
+        E_1 <- E_11 / E_12
+      }
+      
+      if(age<50){
+        E_21 <- table(mx[i, 'age'] < 50)/sum(table(mx[i, 'age'] < 50))
+        E_22 <- table(mx[ni, 'age'] < 50)/sum(table(mx[ni, 'age'] < 50))
+      }
+      else {
+        E_21 <- table(mx[i, 'age'] >= 50)/sum(table(mx[i, 'age'] >= 50))
+        E_22 <- table(mx[ni, 'age'] >= 50)/sum(table(mx[ni, 'age'] >= 50))
+      }
+      
+      #si on a pas suffisament de votes on arrete
+      if (nrow(E_21) < 2 | nrow(E_22) < 2){
+        E_2 <- 0
+      }
+      else {
+        E_2 <- (E_21 / E_22)["TRUE"]
+      }
+      
+      E_31 <- (table(mx[i, 'gender'])/sum(table(mx[i, 'gender'])))[gender]
+      E_32 <- (table(mx[ni, 'gender'])/sum(table(mx[ni, 'gender'])))[gender]
+      
+      if (is.na(E_32) | E_32 == 0) {
+        E_3 <- 0
+      }
+      else {
+        E_3 <- E_31 / E_32
+      }
+      
+      probabilities.to.like[movie] <- OddsToP(ratio.chances(mx[mx$item.id==movie, 'rating'])  * E_1 * E_2 * E_3)
+      
+    }
+    else {
+      probabilities.to.like[movie] <- 0
+    }
+    
+  }
+  
+  probabilities.to.like[is.nan(probabilities.to.like)] <- 0
+  
+  indices.movies.recommended.new.user <- max.nindex(probabilities.to.like, 10)
+  recommended.movies <- data.frame(u.item$movie.title[indices.movies.recommended.new.user])
+  colnames(recommended.movies) <- c("Recommended movies")
+  recommended.movies
+}
+
+recommended.movie.content.base(new.user.job, new.user.gender, new.user.age)

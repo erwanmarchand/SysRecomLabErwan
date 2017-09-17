@@ -69,7 +69,7 @@ colnames(meanPerAge) <- c("age","mean Rating")
 head(meanPerAge)
 ```
 
-# 2) Quels sont les 10 films les plus similaires à "Star Trek V: The Final Frontier (1989)" selon respectivement la mesure du cosinus et de la corrélation avec la matrice de votes. 
+# 2) Quels sont les 10 films les plus similaires à "Star Trek V: The Final Frontier (1989)" selon respectivement la mesure du cosinus et de la corrélation avec la matrice de votes 
 
 Afin de répondre a cette question, il est necessaire de creer plusieurs fonctions.
 
@@ -98,7 +98,7 @@ min.nindex <- function(m, n=5) {
 }
 ```
 
-## Les 10 films les plus similaires selon la mesure du cosinus avec la matrice de votes. 
+## Les 10 films les plus similaires selon la mesure du cosinus avec la matrice de votes 
 
 Sachant que le film le plus similaire a Star Trek V selon la matrice de vote sera toujours lui meme, il faut penser a le supprimer du resultat.
 
@@ -122,7 +122,7 @@ colnames(similarMoviesCos.names) <- c(paste("Most similar movies from",name.star
 similarMoviesCos.names
 ```
 
-## Les 10 films les plus similaires selon la mesure de la correlation avec la matrice de votes. 
+## Les 10 films les plus similaires selon la mesure de la correlation avec la matrice de votes 
 
 ```{r tidy=TRUE}
 wcor <- as.vector(cor(notes.star.trek, as.matrix(m.sparse)))
@@ -136,7 +136,7 @@ similarMoviesCor.names
 
 On peut constater qu'on obtient dans les 2 cas la meme liste de films.
 
-# 3) Utilisez une approche item-item pour calculer le vote au film "Star Trek V: The Final Frontier (1989)" des utilisateurs qui n'ont pas de vote pour celui-ci. Prenez les 20 voisins les plus rapprochés selon la distance euclidienne et utilisez les cosinus comme poids. Si aucun vote commun existe, alors la valeur prédite est fixée à NA.
+# 3) Utilisez une approche item-item pour calculer le vote au film "Star Trek V: The Final Frontier (1989)" des utilisateurs qui n'ont pas de vote pour celui-ci. Prenez les 20 voisins les plus rapprochés selon la distance euclidienne et utilisez les cosinus comme poids. Si aucun vote commun existe, alors la valeur prédite est fixée à NA
 
 ## Recuperation des 20 voisins les plus rapprochés selon la distance euclidienne du film "Star Trek V"
 
@@ -213,7 +213,7 @@ notes.star.trek.predicted.na.no.na
 
 On peut constater que les résultats semblent cohérents car ils sont tous compris entre 0 et 5, de plus la moyenne de ces estimations est d'environ 2.39 ce qui est raisonnable.
 
-# 4) Calculez l'erreur quadratique moyenne des prédiction de l'approche item-item à la question précédente en la comparant aux valeurs observées. 
+# 4) Calculez l'erreur quadratique moyenne des prédiction de l'approche item-item à la question précédente en la comparant aux valeurs observées 
 
 
 Dans un premier temps, on doit recalculer les vote estimés, cette fois-ci pour les utilisateurs ayant deja votés.
@@ -265,11 +265,11 @@ erreur.quadratique
 
 On peut constater que l'erreur quadratique de nos estimations est d'environ 0.86, ce qui est explicable par le faible nombre de votes communs parfois utilisé afin de générer ces estimations.
 
-# 5) Un utilisateur a coté la note la plus faible (1) à tous les films de Star Wars et la note la plus forte (5) à tous les films de Star Trek. Quels 10 films lui conseillez-vous? Utilisez une approche utilisateur-utilisateur pour la réponse et 20 voisins rapprochés.
+# 5) Un utilisateur a coté la note la plus faible (1) à tous les films de Star Wars et la note la plus forte (5) à tous les films de Star Trek. Quels 10 films lui conseillez-vous? Utilisez une approche utilisateur-utilisateur pour la réponse et 20 voisins rapprochés
 
 Pour répondre à cette question, on peut obter pour une approche similaire à celle de la question 3.
 
-## Initialisation du vecteur de votes du nouvel utilisateur.
+## Initialisation du vecteur de votes du nouvel utilisateur
 
 ```{r tidy=TRUE}
 indices.star.trek <- grep("trek", as.character(u.item$movie.title), ignore.case=TRUE)
@@ -280,7 +280,7 @@ votes.new.user[indices.star.trek] <- 5
 votes.new.user[indices.star.wars] <- 1
 ```
 
-## Recuperation des 20 voisins les plus rapprochés selon la distance euclidienne du nouvel utilisateur.
+## Recuperation des 20 voisins les plus rapprochés selon la distance euclidienne du nouvel utilisateur
 
 ```{r tidy=TRUE}
 votes.communs.new.user <- (rowSums((votes.new.user * m.sparse) > 0))
@@ -288,7 +288,7 @@ distance.new.user <- sqrt(rowSums((votes.new.user - m.sparse)^2))
 i.distance.new.user <- min.nindex(distance.new.user, 20) #pas besoin de supprimer notre utilisateur de cette liste car il n'apparait pas dans m.sparse
 ```
 
-## Estimation des notes du nouvel utilisateur pour les films qu'il n'a pas vu.
+## Estimation des notes du nouvel utilisateur pour les films qu'il n'a pas vu
 
 ```{r tidy=TRUE}
 wcos.new.user.voisins <- as.vector(cosinus.vm(votes.new.user, t(m.sparse[i.distance.new.user,])))
@@ -317,7 +317,7 @@ notes.new.user.predicted[notes.new.user.predicted == 0] <- NA
 notes.new.user.predicted <- mean.new.user + notes.new.user.predicted
 ```
 
-## Affichage des 10 films auquels l'utilisateur est susceptible de donner les meilleurs notes.
+## Affichage des 10 films auquels l'utilisateur est susceptible de donner les meilleurs notes
 
 ```{r tidy=TRUE}
 indices.movies.recommended.new.user <- min.nindex(distance.new.user, 10)
@@ -327,6 +327,108 @@ colnames(title.movies.recommended.new.user) <- c("Recommended movies")
 title.movies.recommended.new.user
 ```
 
-# 6) Je suis un nouvel utilisateur. Vous connaissez ma profession, mon sexe et mon âge. Développez un algorithme bayésien pour recommander 10 films sur la base de ces trois catégories.
+# 6) Je suis un nouvel utilisateur. Vous connaissez ma profession, mon sexe et mon âge. Développez un algorithme bayésien pour recommander 10 films sur la base de ces trois catégories
 
 Afin de répondre à cette question, il est nécessaire de "discretiser" la variable pour l'age de l'utilisateur, sans quoi les nombre de comparaisons avec d'autres utilisateurs du meme age sera trop faible. A cette fin, l'approche vue en cours sera utilisée : les ages seront séparés en 2 groupes : les moins de 50 ans et les 50 ans et plus. Cette approche peut sembler diminuer fortement la precision de l'algorithme, cependant les 2 autres precision (sexe et profession) permettront d'obtenir des resultats suffisament precis pour globaliser fortement l'age du nouvel utilisateur.
+
+## Fonctions utilitaires
+
+On peut commencer par créer 2 fonctions utilitaires.
+
+```{r tidy=TRUE}
+ratio.chances <- function(rating.vec, seuil=3) {
+  sum(rating.vec > seuil) / sum(rating.vec <= seuil)
+}
+
+OddsToP <- function(o) {
+  o/(1+o)
+}
+```
+
+On peut ensuite écrire la fonction principale qui, selon les caracteristique de l'utilisateur, lui retournera 10 filns conseillés.
+
+## Fonction principale
+
+```{r tidy=TRUE}
+recommended.movie.content.base <- function(job, gender, age){
+
+  probabilities.to.like = rep(0, nrow(u.item))
+  
+  for (movie in c(1:nrow(u.item))) {
+    
+    i <- (mx$item==movie & mx$rating>3)           # ceux qui aiment
+    ni <- (mx$item==movie & mx$rating<=3)         # et ceux qui n'aiment pas
+    
+    #on ne considere le film que s'il y a au minimum 3 votes, sinon on laisse la probabilité à 0
+    if (sum(i) + sum(ni) >= 3){
+      
+      E_11 <- (table(mx[i, 'job'])/sum(table(mx[i, 'job'])))[job]
+      E_12 <- (table(mx[ni, 'job'])/sum(table(mx[ni, 'job'])))[job]
+    
+      if (is.na(E_12) | E_12 == 0) {
+        E_1 <- 0
+      }
+      else {
+        E_1 <- E_11 / E_12
+      }
+      
+      if(age<50){
+        E_21 <- table(mx[i, 'age'] < 50)/sum(table(mx[i, 'age'] < 50))
+        E_22 <- table(mx[ni, 'age'] < 50)/sum(table(mx[ni, 'age'] < 50))
+      }
+      else {
+        E_21 <- table(mx[i, 'age'] >= 50)/sum(table(mx[i, 'age'] >= 50))
+        E_22 <- table(mx[ni, 'age'] >= 50)/sum(table(mx[ni, 'age'] >= 50))
+      }
+      
+      #si on a pas suffisament de votes on arrete
+      if (nrow(E_21) < 2 | nrow(E_22) < 2){
+        E_2 <- 0
+      }
+      else {
+        E_2 <- (E_21 / E_22)["TRUE"]
+      }
+      
+      E_31 <- (table(mx[i, 'gender'])/sum(table(mx[i, 'gender'])))[gender]
+      E_32 <- (table(mx[ni, 'gender'])/sum(table(mx[ni, 'gender'])))[gender]
+      
+      if (is.na(E_32) | E_32 == 0) {
+        E_3 <- 0
+      }
+      else {
+        E_3 <- E_31 / E_32
+      }
+      
+      probabilities.to.like[movie] <- OddsToP(ratio.chances(mx[mx$item.id==movie, 'rating'])  * E_1 * E_2 * E_3)
+      
+    }
+    else {
+      probabilities.to.like[movie] <- 0
+    }
+    
+  }
+  
+  probabilities.to.like[is.nan(probabilities.to.like)] <- 0
+  
+  indices.movies.recommended.new.user <- max.nindex(probabilities.to.like, 10)
+  recommended.movies <- data.frame(u.item$movie.title[indices.movies.recommended.new.user])
+  colnames(recommended.movies) <- c("Recommended movies")
+  recommended.movies
+}
+```
+
+## Essais avec différents utilisateurs
+
+On peut finalement tester cette fonction avec differents cas.
+
+```{r}
+recommended.movie.content.base('engineer', 'M', '40')
+```
+
+```{r}
+recommended.movie.content.base('student', 'F', '20')
+```
+
+```{r}
+recommended.movie.content.base('writer', 'M', '60')
+```
